@@ -1,4 +1,4 @@
-package com.example.lc.floatbutton;
+package floatmenu;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import com.example.lc.floatbutton.R;
+
+import floatmenu.BaseFloatDailog;
 
 /**
  * Created by wengyiming on 2017/9/13.

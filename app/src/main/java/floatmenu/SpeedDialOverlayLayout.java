@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.lc.floatbutton;
+package floatmenu;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -27,6 +27,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.example.lc.floatbutton.R;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class SpeedDialOverlayLayout extends RelativeLayout {

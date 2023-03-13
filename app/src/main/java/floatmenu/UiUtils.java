@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.lc.floatbutton;
+package floatmenu;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -37,6 +37,8 @@ import android.view.animation.AnimationUtils;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
+
+import com.example.lc.floatbutton.R;
 
 public class UiUtils {
 
