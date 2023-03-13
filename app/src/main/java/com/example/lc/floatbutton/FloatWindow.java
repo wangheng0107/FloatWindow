@@ -1,4 +1,4 @@
-package floatmenu;
+package com.example.lc.floatbutton;
 
 import android.app.Activity;
 import android.content.Context;
