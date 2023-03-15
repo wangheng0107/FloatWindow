@@ -46,4 +46,9 @@
         <attr name="clickable_overlay" format="boolean" />
         <attr name="android:background" />
     </declare-styleable>
+
+    <declare-styleable name="HoverView">
+        <attr name="mTopFill" format="float" />
+        <attr name="mTopHover" format="float" />
+    </declare-styleable>
 </resources>

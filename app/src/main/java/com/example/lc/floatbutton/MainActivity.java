@@ -1,69 +1,55 @@
 package com.example.lc.floatbutton;
 
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import java.util.Arrays;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import hover_view.HoverView;
+import hover_view.ViewState;
 
 public class MainActivity extends AppCompatActivity {
-    FloatWindow dialog;
+
+    @BindView(R.id.btn)
+    Button mBtn;
+    @BindView(R.id.hv)
+    HoverView mHv;
+    @BindView(R.id.rv)
+    RecyclerView mRv;
+    private MyAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        final SpeedDialOverlayLayout mask=findViewById(R.id.mask);
-//        mask.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialog.openOrCloseMenu();
-//            }
-//        });
-        dialog=new FloatWindow(this,1,500, new FloatWindow.IOnItemClicked() {
-            @Override
-            public void onBackItemClick() {
-                Toast.makeText(MainActivity.this,"返回",Toast.LENGTH_SHORT).show();
-                dialog.openOrCloseMenu();
-            }
+        ButterKnife.bind(this);
 
+        mBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCloseItemClick() {
-                Toast.makeText(MainActivity.this,"关闭",Toast.LENGTH_SHORT).show();
-//                mask.hide();
-                dialog.dismiss();
-            }
-
-            @Override
-            public void onClose() {
-//                mask.hide();
-            }
-
-            @Override
-            public void onExpand() {
-//                mask.show();
+            public void onClick(View v) {
+                if (mHv.getState() == ViewState.CLOSE)  // "关闭" 状态
+                    mHv.changeState(ViewState.HOVER);   // 打开至 "悬停" 状态
+//                    mHv.changeState(ViewState.FILL);   // 打开至 "全屏" 状态
+                else
+                    mHv.changeState(ViewState.CLOSE);   // 切换至 "关闭" 状态
             }
         });
-        Button button=findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-                dialog.show("返回高级查询中的搜索结果");
-            }
-        });
-        Button textColorBtn=(Button)findViewById(R.id.set_text_color);
-        textColorBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-                dialog.show("返回高级查询中有关<font color='red'>“"+"关键字"+"”</font>的搜索结果");
-            }
-        });
+
+        mRv.setAdapter(mAdapter = new MyAdapter(this, this));
+        mRv.setLayoutManager(new LinearLayoutManager(this));
+
+        mAdapter.setDataList(Arrays.asList(
+                "1", "2", "3", "4", "5",
+                "6", "7", "8", "9", "10",
+                "11", "12", "13", "14", "15",
+                "16", "17", "18", "19", "20"
+        ));
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 }
