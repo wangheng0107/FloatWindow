@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<hover_view.HoverViewContainer
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.example.lc.floatbutton.ViewDragHelperLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:id="@+id/activity_main"
+  android:background="@android:color/white"
+  android:orientation="vertical">
+
+<!--  <RelativeLayout-->
+<!--    android:id="@+id/topView"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    android:layout_weight="1">-->
+
+<!--    <TextView-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_margin="10dp"-->
+<!--      android:text="知乎收藏夹" />-->
+<!--  </RelativeLayout>-->
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/contentView1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="@android:color/white"
+    android:scrollbars="none"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
-        <Button
-            android:id="@+id/btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="知乎收藏夹"/>
-    </LinearLayout>
+  <TextView
+    android:id="@+id/dragView"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@android:color/holo_blue_light" />
 
-    <hover_view.HoverView
-        android:id="@+id/hv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@android:color/white"
-        app:mTopFill="0.0"
-        app:mTopHover="0.5">
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/contentView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="@android:color/holo_green_light"
+    android:scrollbars="none"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="15dp"
-            android:text="收藏夹"/>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-    </hover_view.HoverView>
-
-</hover_view.HoverViewContainer>
+</com.example.lc.floatbutton.ViewDragHelperLayout>
