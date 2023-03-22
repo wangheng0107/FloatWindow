@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 public class ViewDragHelperLayout extends LinearLayout {
+  private final String TAG = this.getClass().getSimpleName();
 
   private ViewDragHelper viewDragHelper;
 
@@ -63,11 +64,14 @@ public class ViewDragHelperLayout extends LinearLayout {
         super.onViewPositionChanged(changedView, left, top, dx, dy);
         // 改变底部区域高度 上拉和下拉的速度太慢，以2倍速度拉伸
         LinearLayout.LayoutParams bottomViewLayoutParams = (LinearLayout.LayoutParams) bottomView.getLayoutParams();
-        bottomViewLayoutParams.height = bottomViewLayoutParams.height + dy * -1 * 2;
+        int bottomHeight = bottomView.getMeasuredHeight();
+        bottomViewLayoutParams.height = bottomHeight + dy * -1;
         bottomView.setLayoutParams(bottomViewLayoutParams);
+//        Log.e(TAG,)
         // 改变顶部区域高度 上拉和下拉的速度太慢，以2倍速度拉伸
         LinearLayout.LayoutParams topViewLayoutParams = (LinearLayout.LayoutParams) topView.getLayoutParams();
-        topViewLayoutParams.height = topViewLayoutParams.height + dy * 2;
+        int topHeight = topView.getMeasuredHeight();
+        topViewLayoutParams.height = topHeight + dy;
         topView.setLayoutParams(topViewLayoutParams);
       }
     });
