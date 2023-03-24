@@ -6,7 +6,7 @@
   android:background="@android:color/white"
   android:orientation="vertical">
 
-  <android.support.v7.widget.RecyclerView
+  <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/contentView1"
     android:layout_width="match_parent"
     android:layout_height="0dp"
@@ -48,7 +48,7 @@
       android:layout_marginBottom="10dp"
       android:text="知乎收藏夹" />
 
-      <android.support.v7.widget.RecyclerView
+      <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contentView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
