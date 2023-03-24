@@ -1,4 +1,4 @@
-package com.example.lc.floatbutton;
+package com.example.eeo;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
