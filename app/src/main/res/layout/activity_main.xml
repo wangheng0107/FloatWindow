@@ -26,13 +26,27 @@
     android:background="@android:color/white"
     android:scrollbars="none" />
 
-  <TextView
+
+  <RelativeLayout
     android:id="@+id/dragView"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:background="@android:color/holo_blue_light" />
+    android:background="@android:color/holo_blue_light" >
 
-  <RelativeLayout
+    <TextView
+      android:id="@+id/textview"
+      android:layout_width="80dp"
+      android:layout_height="30dp"
+      android:layout_alignParentEnd="true"
+      android:gravity="center"
+      android:layout_marginEnd="8dp"
+      android:text="切换内容"
+      android:layout_centerVertical="true"
+      android:background="@android:color/white" />
+  </RelativeLayout>
+
+
+  <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_weight="1">
@@ -41,16 +55,19 @@
       android:id="@+id/webview"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_margin="10dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginBottom="10dp"
       android:text="知乎收藏夹" />
-  </RelativeLayout>
 
-  <!--  <android.support.v7.widget.RecyclerView-->
-  <!--    android:id="@+id/contentView"-->
-  <!--    android:layout_width="match_parent"-->
-  <!--    android:layout_height="0dp"-->
-  <!--    android:layout_weight="1"-->
-  <!--    android:background="@android:color/holo_green_light"-->
-  <!--    android:scrollbars="none"/>-->
+      <android.support.v7.widget.RecyclerView
+        android:id="@+id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_green_light"
+        android:visibility="gone"
+        android:scrollbars="none"/>
+  </FrameLayout>
 
 </com.example.lc.floatbutton.ViewDragHelperLayout>

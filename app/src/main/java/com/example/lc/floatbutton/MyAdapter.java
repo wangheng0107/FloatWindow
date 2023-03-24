@@ -10,9 +10,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by jinliangshan on 16/12/14.
- */
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private MainActivity mMainActivity;
     Context mContext;

@@ -9,6 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
+/**
+ * 支持拖动的布局组件
+ */
 public class ViewDragHelperLayout extends LinearLayout {
   private final String TAG = this.getClass().getSimpleName();
 
